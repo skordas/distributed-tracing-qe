@@ -98,7 +98,7 @@ done
 
 ### PREPARE TEMPOSTACK ###
 log_task "TempoStack"
-oc create - f ./content/03-tempostack.yaml
+oc create -f ./content/03-tempostack.yaml
 sleep 5
 
 for i in $(seq $r)
