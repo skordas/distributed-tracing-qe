@@ -6,7 +6,7 @@ metadata:
 spec:
   storage:
     secret:
-      name: tempostack-dev-minio
+      name: minio
       type: s3
   storageSize: 1Gi
   resources:
