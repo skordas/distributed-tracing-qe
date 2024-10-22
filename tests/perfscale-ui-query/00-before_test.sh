@@ -118,4 +118,4 @@ do
 done
 
 gateway=$(oc get routes -n test-perfscale -o jsonpath={.items[0].spec.host})
-echo "https://$(gateway)/api/traces/v1/dev/search"
+echo "https://$gateway/api/traces/v1/dev/search"
