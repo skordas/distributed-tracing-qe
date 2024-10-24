@@ -7,6 +7,7 @@ function log_task {
 log_task "Cleaning after test"
 
 oc project default
+oc delete job generate-traces -n test-generate-traces
 oc delete opentelemetrycollector dev
 oc delete clusterrolebinding tempostack-traces
 oc delete clusterrole tempostack-traces-write

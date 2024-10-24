@@ -5,8 +5,8 @@ metadata:
   name: generate-traces
   namespace: test-generate-traces
 spec:
-  completions: 10
-  parallelism: 10
+  completions: 1
+  parallelism: 1
   template:
     spec:
       nodeSelector:
@@ -15,7 +15,7 @@ spec:
       - name: loadgen
         image: ghcr.io/honeycombio/loadgen/loadgen:latest
         args:
-        - --dataset=loadtest
+        - --dataset=loadset
         - --tps=10
         - --depth=50
         - --nspans=50
@@ -24,7 +24,7 @@ spec:
         - --tracecount=3000
         - --protocol=grpc
         - --sender=otel
-        - --host=tempo-tempostack-distributor.test-perfscale:4317
+        - --host=dev-collector.test-perfscale:4317
         - --loglevel=info
         - --insecure
       restartPolicy: Never
